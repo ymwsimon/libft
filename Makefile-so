@@ -30,6 +30,9 @@ bonus	: $(OBJ) $(BOUNS_OBJ)
 
 $(BOUNS_OBJ) : $(BOUNS)
 			$(CC) -c $(BOUNS) $(INCLUDE) $(CFLAGS)
+			
+##so:	$(OBJ) $(BOUNS_OBJ)
+##	gcc -nostartfiles -shared $(CFLAGS) -o libft.so $(OBJ) $(BOUNS_OBJ)
 
 clean	:
 			rm -rf $(OBJ) $(BOUNS_OBJ)

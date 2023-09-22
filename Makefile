@@ -12,24 +12,22 @@ BOUNS_OBJ= $(BOUNS:.c=.o)
 
 NAME	= libft.a
 
-CC		= gcc
+CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
-
-INCLUDE	= libft.h
 
 all 	: $(NAME)
 			
 $(NAME)	: $(OBJ)
 			ar rcs $(NAME) $(OBJ)
 $(OBJ)	: $(SRC)
-			$(CC) -c $(SRC) $(INCLUDE) $(CFLAGS)
+			$(CC) -c $(SRC) $(CFLAGS)
 			
 bonus	: $(OBJ) $(BOUNS_OBJ)
 			ar rcs $(NAME) $(OBJ) $(BOUNS_OBJ)
 
 $(BOUNS_OBJ) : $(BOUNS)
-			$(CC) -c $(BOUNS) $(INCLUDE) $(CFLAGS)
+			$(CC) -c $(BOUNS) $(CFLAGS)
 
 clean	:
 			rm -rf $(OBJ) $(BOUNS_OBJ)

@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:53:21 by mayeung           #+#    #+#             */
-/*   Updated: 2023/08/18 12:49:54 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/08/18 14:01:50 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char				*t;
-	size_t				i;
-	const unsigned int	maxsize = -1;
+	char			*t;
+	size_t			i;
+	unsigned int	maxsize = -1;
 
 	t = 0;
 	if ((nmemb <= maxsize || size <= maxsize) && nmemb * size <= maxsize)

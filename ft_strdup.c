@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:56:14 by mayeung           #+#    #+#             */
-/*   Updated: 2023/07/30 20:56:14 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/10/07 01:12:54 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	t = 0;
-	while (s[i])
+	while (s && s[i])
 		i++;
 	t = malloc(i + 1);
 	if (t)
 	{
 		i = 0;
-		while (s[i])
+		while (s && s[i])
 		{
 			t[i] = s[i];
 			i++;

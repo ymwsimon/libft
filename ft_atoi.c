@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:53:12 by mayeung           #+#    #+#             */
-/*   Updated: 2023/07/30 20:53:14 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/10/16 15:48:22 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	ft_atoi(const char *nptr)
 
 	res = 0;
 	sign = 1;
-	while (*nptr && ft_isspace(*nptr))
+	while (nptr && ft_isspace(*nptr))
 		nptr++;
-	if (*nptr == '-')
+	if (nptr && *nptr == '-')
 		sign = -1;
-	if (*nptr == '+' || *nptr == '-')
+	if (nptr && (*nptr == '+' || *nptr == '-'))
 		nptr++;
-	while (nptr && *nptr && *nptr >= '0' && *nptr <= '9')
+	while (nptr && *nptr >= '0' && *nptr <= '9')
 	{
 		res *= 10;
 		res += *nptr - '0';

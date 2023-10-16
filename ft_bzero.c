@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:53:17 by mayeung           #+#    #+#             */
-/*   Updated: 2023/07/30 20:53:18 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/10/16 15:48:26 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	sc = s;
-	while (i != n)
-	{
-		sc[i] = 0;
-		i++;
-	}
+	while (sc && i != n)
+		sc[i++] = 0;
 }

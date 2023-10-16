@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:58:12 by mayeung           #+#    #+#             */
-/*   Updated: 2023/07/30 20:58:13 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/10/16 18:01:41 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = ft_strlen(res) - 1;
 	while (i < ft_strlen(res) && ft_strchr(set, res[i]))
 		i--;
-	temp = res;
 	if (i < ft_strlen(res) && res[i])
 	{
+		temp = res;
 		res[i + 1] = 0;
 		res = ft_strdup(res);
 		if (!res)

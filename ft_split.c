@@ -6,50 +6,67 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:55:24 by mayeung           #+#    #+#             */
-/*   Updated: 2023/07/30 20:55:31 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/10/16 22:12:04 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_update_sten(char const **s, char **en, char c)
-{	
-	while (**s && **s == c)
-		(*s)++;
-	*en = ft_strchr(*s, c);
+int	ft_count_word(const char *s, char c)
+{
+	int	res;
+
+	res = 0;
+	while (s && *s && *s == c)
+		s++;
+	while (s && *s)
+	{
+		while (*s && *s != c)
+			s++;
+		res++;
+		while (s && *s && *s == c)
+			s++;
+	}
+	return (res);
 }
 
-void	ft_init(char ***res, size_t	*sres)
+int	ft_word_length(const char *s, char c)
 {
-		*res = malloc(sizeof(char *));
-		*sres = 1;
+	int	i;
+
+	while (s && *s && *s == c)
+		s++;
+	i = 0;
+	while (s && s[i] && s[i] != c)
+		i++;
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	char	**temp;
-	char	*en;
-	size_t	sres;
+	int		i;
+	int		k;
 
-	ft_init(&res, &sres);
-	if (!res || !s)
-		return (res);
-	ft_update_sten(&s, &en, c);
-	while (*s)
+	while (s && *s && *s == c)
+		s++;
+	k = 0;
+	res = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
+	while (s && *s)
 	{
-		temp = malloc(sizeof(char *) * (++sres));
-		if (sres > 2)
-			ft_memcpy(temp, res, sizeof(char *) * (sres - 1));
-		free(res);
-		res = temp;
-		if (!en)
-			en = (char *)&s[ft_strlen(s)];
-		res[sres - 2] = malloc(sizeof(char) * (en - s + 1));
-		ft_strlcpy(res[sres - 2], s, en - s + 1);
-		s = en;
-		ft_update_sten(&s, &en, c);
+		res[k] = malloc(sizeof(char) * (ft_word_length(s, c) + 1));
+		i = 0;
+		while (i < ft_word_length(s, c))
+		{
+			res[k][i] = s[i];
+			i++;
+		}
+		res[k][i] = 0;
+		k++;
+		s += ft_word_length(s, c);
+		while (s && *s && *s == c)
+			s++;
 	}
-	res[sres - 1] = 0;
+	res[k] = 0;
 	return (res);
 }

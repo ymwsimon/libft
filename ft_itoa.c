@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_int_length(int n)
+static size_t	ft_int_length(int n)
 {
 	size_t	i;
 

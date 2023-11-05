@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:55:24 by mayeung           #+#    #+#             */
-/*   Updated: 2023/10/29 19:55:50 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/11/05 12:25:24 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	**ft_split(char const *s, char c)
 
 	k = 0;
 	res = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
-	while (s && *s)
+	while (res && s && *s)
 	{
 		while (*s && *s == c)
 			s++;
@@ -63,6 +63,7 @@ char	**ft_split(char const *s, char c)
 			s += i;
 		}
 	}
-	res[k] = 0;
+	if (res)
+		res[k] = 0;
 	return (res);
 }

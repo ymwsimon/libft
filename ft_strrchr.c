@@ -6,9 +6,11 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:58:00 by mayeung           #+#    #+#             */
-/*   Updated: 2023/10/16 17:24:18 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/12/28 13:33:19 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -28,5 +30,5 @@ char	*ft_strrchr(const char *s, int c)
 			h--;
 		}
 	}
-	return (0);
+	return (NULL);
 }

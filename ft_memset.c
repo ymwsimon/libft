@@ -6,7 +6,7 @@
 /*   By: mayeung <mayeung@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 20:54:38 by mayeung           #+#    #+#             */
-/*   Updated: 2023/12/28 13:05:56 by mayeung          ###   ########.fr       */
+/*   Updated: 2023/12/29 15:53:01 by mayeung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	ptr = s;
-	while (i < n)
+	while (ptr && i < n)
 	{
 		ptr[i] = (char)c;
 		i++;
